@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 400263992}
   - component: {fileID: 400263991}
   - component: {fileID: 400263993}
+  - component: {fileID: 400263994}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -181,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -202,11 +203,11 @@ Transform:
   m_GameObject: {fileID: 400263990}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00010475053, y: -0.02164609, z: -0.02269994, w: 0.99950796}
-  m_LocalPosition: {x: -2.8043, y: 1.2603, z: 0}
-  m_LocalScale: {x: 4.0624337, y: 4.0624337, z: 4.0624337}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6.1371183, y: 6.1371183, z: 6.1371183}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1279332504}
+  - {fileID: 408149779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.068, y: -2.48, z: -2.601}
 --- !u!61 &400263993
@@ -216,7 +217,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400263990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -254,6 +255,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &400263994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400263990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3960e0f657a8c5a4a9571d99693d0a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Circlespeed: 200
+  switchTime: 5
+  Rotation: {fileID: 408149779}
+  DefPos: {x: 134, y: 678, z: 456}
+  Clockwise: 1
+  timeelapsed: 0
 --- !u!1 &408149777
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +283,6 @@ GameObject:
   m_Component:
   - component: {fileID: 408149779}
   - component: {fileID: 408149778}
-  - component: {fileID: 408149782}
   m_Layer: 0
   m_Name: Spinning circle
   m_TagString: Untagged
@@ -312,7 +330,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -332,27 +350,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408149777}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9998116, z: -0, w: 0.019412443}
-  m_LocalPosition: {x: -2.43, y: 2.77, z: -0.16}
-  m_LocalScale: {x: 0.5978056, y: 0.5978056, z: 0.5978056}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.00010475048, y: 0.021646068, z: 0.022699937, w: 0.99950796}
+  m_LocalPosition: {x: -0.017300114, y: 0.38089353, z: 0.00045454223}
+  m_LocalScale: {x: 0.09804046, y: 0.09804046, z: 0.09804046}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -177.775, z: 0}
---- !u!114 &408149782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408149777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3960e0f657a8c5a4a9571d99693d0a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Circlespeed: 30
-  CircleSpin: 1
+  m_Father: {fileID: 400263992}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776379565
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,10 +443,42 @@ Transform:
   m_GameObject: {fileID: 776379565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.23, y: 1.51, z: -9.939869}
+  m_LocalPosition: {x: 0.08, y: -0.35, z: -9.939869}
   m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &831942935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831942936}
+  m_Layer: 0
+  m_Name: MiddleCircle Barricade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &831942936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831942935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12284893, y: 2.154954, z: -0.2163957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1279332504}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279332503
@@ -470,12 +506,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279332503}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00881027, y: 0.16832808, z: 0.0022704438, w: 0.98568904}
-  m_LocalPosition: {x: -0.008, y: -0.001, z: -0.061}
-  m_LocalScale: {x: 0.5561424, y: 0.5561424, z: 0.5561424}
+  m_LocalRotation: {x: 0.012474574, y: 0.14670919, z: -0.019932678, w: 0.9889001}
+  m_LocalPosition: {x: 0.08976736, y: -2.1593034, z: -0.15974712}
+  m_LocalScale: {x: 3.4131117, y: 3.4131112, z: 3.4131114}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 400263992}
+  m_Father: {fileID: 831942936}
   m_LocalEulerAnglesHint: {x: 0.951, y: 19.386, z: 0.426}
 --- !u!212 &1279332505
 SpriteRenderer:
@@ -517,7 +553,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.19601545, g: 0.12829298, b: 0.8773585, a: 1}
   m_FlipX: 0
@@ -535,4 +571,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 776379568}
   - {fileID: 400263992}
-  - {fileID: 408149779}
+  - {fileID: 831942936}

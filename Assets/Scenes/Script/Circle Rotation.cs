@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,23 +7,38 @@ using UnityEngine.UIElements;
 public class CircleRotation : MonoBehaviour
 {
     public float Circlespeed;
-    public bool  CircleSpin = true;
+    public float switchTime;
+    public Transform Rotation;
+    public Vector3 DefPos;
+    public bool Clockwise = true;
+    public float timeelapsed = 0f;
 
 
     // Start is called before the first frame update
-    void Start()
-    {
-     
-        
 
-    }
 
     // Update is called once per frame
     void Update()
     {
-        float Direction = CircleSpin ? 1.0f : -1.0f;
-        transform.Rotate(Vector3.up,Circlespeed  * Time.deltaTime);
 
+        timeelapsed += Time.deltaTime;
+
+        if (timeelapsed >= switchTime)
+        {
+            // Switch the rotation direction
+            Clockwise = !Clockwise;
+
+            // Reset the elapsed time
+            timeelapsed = 0f;
+        }
+
+        float direction = Clockwise ? 1f : -1f;
+       
+        transform.Rotate(Vector3.forward, Circlespeed * direction  * Time.deltaTime);
+       
+
+        Debug.Log("Rotation");
+    }
 
     }
-}
+
